@@ -1,5 +1,5 @@
 {
-  import = [
+  imports = [
     ./bat.nix
     ./eza.nix
     ./freetube.nix
