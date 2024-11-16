@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  import = [
+    ./usr/bin
+  ];
 
   home = {
     username = "wg";
