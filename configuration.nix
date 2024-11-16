@@ -29,8 +29,6 @@
   };
 
   networking.hostName = "framework"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
@@ -52,20 +50,16 @@
     };
   };
 
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  
+	environment.plasma6.excludePackages = with pkgs; [
+    kdePackages.plasma-browser-integration
+    kdePackages.kate
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb = { 
@@ -91,10 +85,6 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      firefox
-      tree
-    ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -104,6 +94,7 @@
     wget
     git
     zsh
+    tree
   ];
 
   services = {
