@@ -24,13 +24,16 @@
           config.allowUnfree = true;
         }
       );
-
     in
   {
     nixosConfigurations = { 
       framework13 = lib.nixosSystem {
         inherit system;
         modules = [ ./etc/hostname.d/framework13 ];
+      };
+      desktop = lib.nixosSystem {
+        inherit system;
+        modules = [ ./etc/hostname.d/desktop ];
       };
     };
     homeConfigurations = {

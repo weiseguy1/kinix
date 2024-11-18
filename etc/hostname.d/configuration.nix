@@ -78,7 +78,7 @@
   users.users.wg = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -90,6 +90,7 @@
     zsh
     tree
 		kdePackages.kdeconnect-kde
+		virt-manager
   ];
 
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
