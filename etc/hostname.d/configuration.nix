@@ -5,11 +5,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
@@ -28,7 +23,6 @@
     options = "--delete-older-than 7d";
   };
 
-  networking.hostName = "framework"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
@@ -97,10 +91,6 @@
     tree
 		kdePackages.kdeconnect-kde
   ];
-
-  services = {
-    fprintd.enable = true;
-  };
 
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
   xdg.portal.config.common.default = "kde";

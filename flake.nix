@@ -30,7 +30,7 @@
     nixosConfigurations = { 
       framework13 = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ ./etc/hostname.d/framework13 ];
       };
     };
     homeConfigurations = {
