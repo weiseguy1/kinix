@@ -8,6 +8,7 @@
     [ 
 		  (modulesPath + "/installer/scan/not-detected.nix")
 			../configuration.nix
+			../../virt-manager.nix
     ];
   
 	networking.hostName = "framework";
