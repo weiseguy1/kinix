@@ -7,8 +7,8 @@
   imports =
     [ 
       (modulesPath + "/installer/scan/not-detected.nix")
-			../configuration.nix
-			../../virt-manager.nix
+      ../configuration.nix
+      ../../virt-manager.nix
     ];
 
   networking.hostName = "desktop";

@@ -50,7 +50,7 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-	environment.plasma6.excludePackages = with pkgs; [
+  environment.plasma6.excludePackages = with pkgs; [
     kdePackages.plasma-browser-integration
     kdePackages.kate
   ];
@@ -89,8 +89,8 @@
     git
     zsh
     tree
-		kdePackages.kdeconnect-kde
-		virt-manager
+    kdePackages.kdeconnect-kde
+    virt-manager
   ];
 
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
@@ -100,14 +100,14 @@
   # services.openssh.enable = true;
 
   networking.firewall = {
-	  enable = true;
+    enable = true;
     allowedTCPPortRanges = [ 
       { from = 1714; to = 1764; } # KDE Connect
     ];  
     allowedUDPPortRanges = [ 
       { from = 1714; to = 1764; } # KDE Connect
     ];
-	};
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
