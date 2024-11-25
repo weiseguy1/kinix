@@ -61,6 +61,9 @@
     variant= "";
   };
 
+  # Enable OpenGL
+  hardware.opengl.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = false;
 

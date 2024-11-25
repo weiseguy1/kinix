@@ -18,6 +18,7 @@
     # release notes.
     stateVersion = "24.05";
     packages = with pkgs; [
+      lutris
       tree
       yt-dlp
       brave
