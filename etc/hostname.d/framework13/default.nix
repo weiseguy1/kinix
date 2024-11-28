@@ -15,6 +15,7 @@
 
   services = {
     fprintd.enable = true;
+    udev.packages = [ pkgs.android-udev-rules ];
   };
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
