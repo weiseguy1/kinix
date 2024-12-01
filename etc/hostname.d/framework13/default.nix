@@ -18,10 +18,30 @@
     udev.packages = [ pkgs.android-udev-rules ];
   };
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+  boot = {
+    loader.timeout = 0;
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    initrd = {
+      availableKernelModules = [ 
+        "nvme" 
+        "xhci_pci" 
+        "thunderbolt" 
+        "usb_storage" 
+        "sd_mod"
+      ];
+      kernelModules = [ "kvm-amd" ];
+    };
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "loglevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
+  };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/e91db2bc-6dd1-41a4-a083-ee1c9a0cd151";
