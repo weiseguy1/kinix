@@ -21,6 +21,7 @@
     # release notes.
     stateVersion = "24.05";
     packages = with pkgs; [
+      obsidian
       lutris
       tree
       yt-dlp
