@@ -4,7 +4,7 @@
   programs.nixvim.plugins.lsp = {
     enable = true; 
     servers = {
-      nil-ls = { 
+      nil_ls = { 
         enable = true;
         package = pkgs.nil;
       };
