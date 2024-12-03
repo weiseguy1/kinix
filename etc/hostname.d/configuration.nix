@@ -62,7 +62,7 @@
   };
 
   # Enable OpenGL
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = false;
