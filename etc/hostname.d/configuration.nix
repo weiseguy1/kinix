@@ -24,6 +24,10 @@
   };
 
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.stevenblack = {
+    enable = true;
+    block = [ "fakenews" "gambling" ];
+  };
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
