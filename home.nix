@@ -23,7 +23,6 @@
     packages = with pkgs; [
       spotify
       obsidian
-      lutris
       tree
       yt-dlp
       brave
