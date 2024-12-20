@@ -14,7 +14,10 @@
   networking.hostName = "framework";
 
   services = {
-    fprintd.enable = true;
+    fprintd = {
+      enable = true;
+      package = pkgs.fprintd;
+    };
     udev.packages = [ pkgs.android-udev-rules ];
   };
 
