@@ -7,7 +7,7 @@
 
   home = {
     username = "kweise";
-    homeDirectory = "/home/kweise`";
+    homeDirectory = "/home/kweise";
     sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
       EDITOR = "nvim";
