@@ -40,7 +40,14 @@
       wg = home-manager.lib.homeManagerConfiguration {
         pkgs = legacyPackages.x86_64-linux;
         modules = [ 
-          ./home.nix
+          ./home/wg.nix
+          inputs.nixvim.homeManagerModules.nixvim 
+        ];
+      };
+      kweise = home-manager.lib.homeManagerConfiguration {
+        pkgs = legacyPackages.x86_64-linux;
+        modules = [ 
+          ./home/kweise.nix
           inputs.nixvim.homeManagerModules.nixvim 
         ];
       };

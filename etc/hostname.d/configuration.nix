@@ -82,10 +82,17 @@
   };
 
   programs.zsh.enable = true;
-  users.users.wg = {
-    shell = pkgs.zsh;
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+  users.users = {
+    wg = {
+      shell = pkgs.zsh;
+      isNormalUser = true;
+      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    };
+    kweise = {
+      shell = pkgs.zsh;
+      isNormalUser = true;
+      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    };
   };
 
   # List packages installed in system profile. To search, run:
