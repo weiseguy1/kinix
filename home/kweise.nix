@@ -31,6 +31,7 @@
       zoom-us 
       apache-directory-studio
       mpv
+      kate
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
   };
