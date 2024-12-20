@@ -24,8 +24,12 @@
       spotify
       obsidian
       tree
-      yt-dlp
       brave
+      firefox
+      thunderbird
+      rocketchat-desktop
+      zoom-us 
+      apache-directory-studio
       mpv
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
