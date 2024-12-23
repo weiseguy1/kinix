@@ -32,6 +32,7 @@
       apache-directory-studio
       mpv
       kate
+      traceroute
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
   };
