@@ -24,6 +24,7 @@
   };
 
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1"];
   networking.stevenblack = {
     enable = true;
     block = [ "fakenews" "gambling" "porn" ];
