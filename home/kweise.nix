@@ -21,7 +21,6 @@
     # release notes.
     stateVersion = "24.05";
     packages = with pkgs; [
-      spotify
       obsidian
       tree
       brave
@@ -29,7 +28,6 @@
       thunderbird
       rocketchat-desktop
       zoom-us 
-      apache-directory-studio
       mpv
       kate
       traceroute
