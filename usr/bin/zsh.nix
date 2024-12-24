@@ -14,6 +14,7 @@
       ls = "exa";
       la = "exa -A";
       ll = "exa -lA --git";
+      diff = "diff -y --suppress-common-lines";
     };
     initExtraBeforeCompInit =
     ''
