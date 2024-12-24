@@ -2,12 +2,12 @@
 
 {
   imports = [
-    ./usr/bin
+    ../usr/bin
   ];
 
   home = {
     username = "kweise";
-    homeDirectory = "/home/kweise`";
+    homeDirectory = "/home/kweise";
     sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
       EDITOR = "nvim";
@@ -21,7 +21,6 @@
     # release notes.
     stateVersion = "24.05";
     packages = with pkgs; [
-      spotify
       obsidian
       tree
       brave
@@ -29,8 +28,9 @@
       thunderbird
       rocketchat-desktop
       zoom-us 
-      apache-directory-studio
       mpv
+      kate
+      traceroute
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
   };

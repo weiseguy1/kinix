@@ -24,6 +24,7 @@
   };
 
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1"];
   networking.stevenblack = {
     enable = true;
     block = [ "fakenews" "gambling" "porn" ];
@@ -48,8 +49,11 @@
     };
   };
 
+  security.doas.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.flatpak.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.sddm.enable = true;

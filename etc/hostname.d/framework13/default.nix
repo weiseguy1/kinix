@@ -9,7 +9,7 @@
       (modulesPath + "/installer/scan/not-detected.nix")
       ../configuration.nix
       ../../virt-manager.nix
-    ];
+    ] ++ lib.optional (builtins.pathExists ../../ssl/certs.nix) ../../ssl/certs.nix;
   
   networking.hostName = "framework";
 
