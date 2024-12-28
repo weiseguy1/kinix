@@ -27,6 +27,7 @@
       yt-dlp
       brave
       mpv
+      firefox
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
   };
