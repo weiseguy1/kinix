@@ -5,6 +5,8 @@
 { pkgs, ... }:
 
 {
+  imports = [ ../hosts.nix ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
@@ -25,10 +27,6 @@
 
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.nameservers = [ "1.1.1.1" "1.0.0.1"];
-  networking.stevenblack = {
-    enable = true;
-    block = [ "fakenews" "gambling" "porn" ];
-  };
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
