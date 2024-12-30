@@ -21,14 +21,10 @@
     # release notes.
     stateVersion = "24.05";
     packages = with pkgs; [
-      spotify
       obsidian
       tree
-      yt-dlp
       brave
       mpv
-      mcomix
-      firefox-esr
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
   };
