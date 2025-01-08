@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../usr/bin
+    ./base
   ];
 
   home = {
@@ -13,7 +13,7 @@
       EDITOR = "nvim";
     };
     shellAliases = {
-      shell = "nix-shell --command zsh";
+      shell = "nix-shell --command zsh -p $@";
     };
 
     # You should not change this value, even if you update Home Manager. If you do
