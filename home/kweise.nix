@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../usr/bin
+    ./base
   ];
 
   home = {
