@@ -5,7 +5,7 @@
 { pkgs, ... }:
 
 {
-  import = [
+  imports = [
     ../ignore
   ];
 
