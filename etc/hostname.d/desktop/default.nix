@@ -13,6 +13,15 @@
 
   networking.hostName = "desktop";
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "amdgpu" "vfio-pci" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "amd_iommu=on" "pcie_aspm=off" ];
@@ -25,32 +34,19 @@
     modprobe -i vfio-pci
   '';
 
-
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/ced0bd96-892d-4051-a850-b91816b5b2c2";
-      fsType = "btrfs";
-      options = [ "subvol=@" "compress=zstd" ];
+    { device = "/dev/disk/by-uuid/aa799288-5d10-4967-b794-c9d860a16f84";
+      fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."crypt".device = "/dev/disk/by-label/CRYPT";
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/ced0bd96-892d-4051-a850-b91816b5b2c2";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/ced0bd96-892d-4051-a850-b91816b5b2c2";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" "compress=zstd" "noatime" ];
-    };
+  boot.initrd.luks.devices."luks-b02648c2-383b-4772-a360-5f9d5175854f".device = "/dev/disk/by-uuid/b02648c2-383b-4772-a360-5f9d5175854f";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A7AA-33F4";
+    { device = "/dev/disk/by-uuid/2E83-3A0F";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+      options = [ "fmask=0077" "dmask=0077" ];
     };
+
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
