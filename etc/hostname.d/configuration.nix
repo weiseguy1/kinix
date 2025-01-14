@@ -5,6 +5,9 @@
 { pkgs, ... }:
 
 {
+  import = [
+    ../ignore
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
