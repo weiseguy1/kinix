@@ -5,9 +5,6 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ../ignore
-  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -31,8 +28,13 @@
   networking.nameservers = [ "1.1.1.1" "1.0.0.1"];
   networking.stevenblack = {
     enable = true;
-    block = [ "fakenews" "gambling" "porn" ];
+    block = [ "fakenews" "gambling" ];
   };
+  networking.extraHosts =
+  ''
+    # personal testing VM
+    192.168.122.136 go-server.weiseguy.net
+  '';
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
