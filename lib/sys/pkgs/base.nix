@@ -10,6 +10,7 @@
       act
       bc
       bun
+      dig
       dust
       duf
       fastfetch
