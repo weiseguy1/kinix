@@ -13,23 +13,15 @@
       ../../lib/sys
     ];
 
+  # <lib/sys> modules
   nvidiaDriver.enable = true;
   nvidiaDriver.useOpen = true;
+
   
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.grub.device = "nodev";
-
-  #nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  #nix.settings.auto-optimise-store = true;
-  #nix.gc = {
-  #  automatic = true;
-  #  dates = "daily";
-  #  options = "--delete-older-than 7d";
-  #};
-
-  #nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "everest"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -87,13 +79,6 @@
     enable = true;
   };
 
-  #hardware.nvidia = {
-  #  modesetting.enable = true;
-  #  open = false;
-  #  nvidiaSettings = true;
-  #  package = config.boot.kernelPackages.nvidiaPackages.stable;
-  #};
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -115,19 +100,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  #users.users.wg = {
-  #  shell = pkgs.zsh;
-  #  uid = 1000;
-  #  initialPassword = "nixos123!";
-  #  isNormalUser = true;
-  #  extraGroups = [ "networkmanager" "wheel" ];
-  #  packages = with pkgs; [
-  #    tree
-  #    lutris
-  #  ];
-  #};
 
   programs.firefox.enable = true;
   programs.zsh.enable = true;
