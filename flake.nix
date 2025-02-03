@@ -30,7 +30,7 @@
     in
   {
     nixosConfigurations = { 
-      desktop = lib.nixosSystem {
+      everest = lib.nixosSystem {
         inherit system;
         modules = [ 
 	  ./hosts/everest
@@ -39,7 +39,7 @@
       };
     };
     homeConfigurations = {
-      wg = home-manager.lib.homeManagerConfiguration {
+      "wg@everest" = home-manager.lib.homeManagerConfiguration {
 	inherit pkgs;
         modules = [ 
           ./home/everest
