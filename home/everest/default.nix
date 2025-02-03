@@ -4,8 +4,11 @@
   imports = [
     ../../lib/home
   ];
+  
+  # <lib/home> modules
+  guiPkgs.enable = true;
+  workPkgs.enable = true;
 
-  desktop.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

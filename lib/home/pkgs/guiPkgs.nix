@@ -2,10 +2,10 @@
 
 {
   options = {
-    desktop.enable = lib.mkEnableOption "enables desktop packages";
+    guiPkgs.enable = lib.mkEnableOption "enables GUI packages";
   };
 
-  config = lib.mkIf config.desktop.enable {
+  config = lib.mkIf config.guiPkgs.enable {
     home.packages = with pkgs; [
       brave
       freetube

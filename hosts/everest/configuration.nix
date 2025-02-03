@@ -14,6 +14,7 @@
     ];
 
   # <lib/sys> modules
+  gamePkgs.enable = true;
   nvidiaDriver.enable = true;
   nvidiaDriver.useOpen = true;
 
