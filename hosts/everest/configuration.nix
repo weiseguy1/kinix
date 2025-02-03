@@ -10,22 +10,26 @@
       ./hardware-configuration.nix
       ./disko.nix
       ./openvpn.nix
+      ../../lib/sys
     ];
 
+  nvidiaDriver.enable = true;
+  nvidiaDriver.useOpen = true;
+  
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.grub.device = "nodev";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.auto-optimise-store = true;
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 7d";
-  };
+  #nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  #nix.settings.auto-optimise-store = true;
+  #nix.gc = {
+  #  automatic = true;
+  #  dates = "daily";
+  #  options = "--delete-older-than 7d";
+  #};
 
-  nixpkgs.config.allowUnfree = true;
+  #nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "everest"; # Define your hostname.
   networking.networkmanager.enable = true;
@@ -83,12 +87,12 @@
     enable = true;
   };
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
+  #hardware.nvidia = {
+  #  modesetting.enable = true;
+  #  open = false;
+  #  nvidiaSettings = true;
+  #  package = config.boot.kernelPackages.nvidiaPackages.stable;
+  #};
   
 
   # Configure keymap in X11
@@ -113,30 +117,20 @@
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.wg = {
-    shell = pkgs.zsh;
-    uid = 1000;
-    initialPassword = "nixos123!";
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      tree
-    ];
-  };
+  #users.users.wg = {
+  #  shell = pkgs.zsh;
+  #  uid = 1000;
+  #  initialPassword = "nixos123!";
+  #  isNormalUser = true;
+  #  extraGroups = [ "networkmanager" "wheel" ];
+  #  packages = with pkgs; [
+  #    tree
+  #    lutris
+  #  ];
+  #};
 
   programs.firefox.enable = true;
   programs.zsh.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-   environment.systemPackages = with pkgs; [
-     htop
-     openvpn
-     wget
-     git
-     zsh
-     wget
-   ];
 
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
   xdg.portal.config.common.default = "kde";

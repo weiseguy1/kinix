@@ -42,7 +42,7 @@
       wg = home-manager.lib.homeManagerConfiguration {
 	inherit pkgs;
         modules = [ 
-          ./home/wg.nix
+          ./home/everest
           inputs.nixvim.homeManagerModules.nixvim 
         ];
       };
