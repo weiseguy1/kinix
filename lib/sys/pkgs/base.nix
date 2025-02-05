@@ -7,6 +7,8 @@
 
   config = lib.mkIf config.base.enable {
     environment.systemPackages = with pkgs; [
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+
       act
       bc
       bun
