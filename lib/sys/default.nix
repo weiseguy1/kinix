@@ -3,6 +3,7 @@
     ./hardware
     ./nix
     ./pkgs
+    ./services
     ./users
   ];
 }
