@@ -2,21 +2,23 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./disko.nix
-      ./openvpn.nix
       ../../lib/sys
     ];
 
   # <lib/sys> modules
   gamePkgs.enable = true;
   nvidiaDriver.enable = true;
-  nvidiaDriver.useOpen = true;
+  nvidiaDriver.useOpen = false;
+  cupsService.enable = true;
+  vpnService.enable = true;
+  udevService.enable = true;
 
   
   boot.loader.grub.enable = true;
@@ -29,7 +31,7 @@
   networking.nameservers = [ "1.1.1.1" "1.0.0.1"];
   networking.stevenblack = {
     enable = true;
-    block = [ "fakenews" "gambling" ];
+    block = [ "fakenews" "gambling" "porn" ];
   };
 
   # Set your time zone.
@@ -51,12 +53,6 @@
       LC_TIME = "en_US.UTF-8";
     };
   };
-
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
 
   # Enable the X11 windowing system.
   services.xserver = {
@@ -81,13 +77,6 @@
   };
 
 
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable sound.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -98,9 +87,6 @@
     pulse.enable = true;
   };
 
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
 
   programs.firefox.enable = true;
   programs.zsh.enable = true;
