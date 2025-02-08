@@ -44,12 +44,6 @@
   boot.loader.grub.device = "nodev";
 
   networking.hostName = "everest"; # Define your hostname.
-  networking.networkmanager.enable = true;
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1"];
-  networking.stevenblack = {
-    enable = true;
-    block = [ "fakenews" "gambling" "porn" ];
-  };
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
