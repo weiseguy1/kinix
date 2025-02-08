@@ -27,6 +27,8 @@
       kernelModules = [ ];
     };
     kernelModules = [ "kvm-amd" ];
+    kernelParams = [ "resume_offset=533760" ];
+    resumeDevice = "/dev/disk/by-label/nixos";
     extraModulePackages = [ ];
     plymouth = {
       enable = true;
