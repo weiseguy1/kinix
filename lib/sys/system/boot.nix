@@ -24,6 +24,7 @@
         efiSupport = true;
         configurationLimit = 5;
         efiInstallAsRemovable = true;
+        canTouchEfiVariables = false;
       };
     };
 
