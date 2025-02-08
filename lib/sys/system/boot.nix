@@ -18,13 +18,15 @@
     ];
 
     loader = {
+      efi = {
+        canTouchEfiVariables = false;
+      }; 
       grub = {
         enable = true;
         device = "nodev";
         efiSupport = true;
         configurationLimit = 5;
         efiInstallAsRemovable = true;
-        canTouchEfiVariables = false;
       };
     };
 
