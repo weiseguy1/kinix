@@ -25,24 +25,31 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-	config.allowUnfree = true;
+        config.allowUnfree = true;
       };
     in
   {
     nixosConfigurations = { 
-      everest = lib.nixosSystem {
+      fuji = lib.nixosSystem {
         inherit system;
         modules = [ 
-	  ./hosts/everest
+          ./hosts/fuji
           inputs.disko.nixosModules.default
-	];
+        ];
+      };
+      aso = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/aso
+          inputs.disko.nixosModules.default
+        ];
       };
     };
     homeConfigurations = {
-      "wg@everest" = home-manager.lib.homeManagerConfiguration {
-	inherit pkgs;
+      "wg@fuji" = home-manager.lib.homeManagerConfiguration {
+	      inherit pkgs;
         modules = [ 
-          ./home/everest
+          ./home/fuji
           inputs.nixvim.homeManagerModules.nixvim 
         ];
       };

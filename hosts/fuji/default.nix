@@ -15,7 +15,7 @@
   # <lib/sys> modules
   gamePkgs.enable = true;
   nvidiaDriver.enable = true;
-  nvidiaDriver.useOpen = false;
+  nvidiaDriver.useOpen = true;
   cupsService.enable = true;
   vpnService.enable = true;
   udevService.enable = true;
@@ -47,7 +47,7 @@
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
 
-  networking.hostName = "everest"; # Define your hostname.
+  networking.hostName = "fuji"; # Define your hostname.
 
 
   # Enable the X11 windowing system.
