@@ -20,7 +20,7 @@
   ## Extra boot info not defined in <lib/sys>
   boot = {
     initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "thunderbolt" "usbhid" "usb_storage" "sd_mod" ];
       kernelModules = [ ];
     };
     kernelModules = [ "kvm-amd" ];
@@ -49,7 +49,6 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    videoDrivers = ["nvidia"];
     xkb = {
       layout = "us";
       variant = "";
