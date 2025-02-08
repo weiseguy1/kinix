@@ -13,6 +13,7 @@
     ];
 
   # <lib/sys> modules
+  gamePkgs.enable = false;
   cupsService.enable = true;
   vpnService.enable = true;
   udevService.enable = true;
