@@ -20,12 +20,11 @@
   ## Extra boot info not defined in <lib/sys>
   boot = {
     initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
       kernelModules = [ ];
     };
     kernelModules = [ "kvm-amd" ];
-    kernelParams = [ "resume_offset=533760" ];
-    resumeDevice = "/dev/disk/by-label/nixos";
+    kernelParams = [ ];
     extraModulePackages = [ ];
     plymouth = {
       enable = true;
@@ -50,7 +49,6 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    videoDrivers = ["nvidia"];
     xkb = {
       layout = "us";
       variant = "";
