@@ -5,6 +5,7 @@
     ./nix
     ./pkgs
     ./services
+    ./system
     ./users
   ];
 }

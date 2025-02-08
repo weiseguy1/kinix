@@ -20,16 +20,11 @@
     loader = {
       grub = {
         enable = true;
-	device = "nodev";
+        device = "nodev";
         efiSupport = true;
-	configurationLimit = 5;
-	efiInstallAsRemovable = true;
+        configurationLimit = 5;
+        efiInstallAsRemovable = true;
       };
-    };
-
-    plymouth = {
-      enable = true;
-      theme = "bgrt";
     };
 
     tmp.cleanOnBoot = true;
