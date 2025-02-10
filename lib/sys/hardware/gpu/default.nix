@@ -6,5 +6,5 @@
   ];
 
   nvidiaDriver.enable = lib.mkDefault false;
-  nvidiaDriver.useOpen = lib.mkDefault false;
+  nvidiaDriver.useOpen = lib.mkDefault true;
 }

@@ -18,6 +18,9 @@
     ];
 
     loader = {
+      efi = {
+        canTouchEfiVariables = false;
+      }; 
       grub = {
         enable = true;
         device = "nodev";
