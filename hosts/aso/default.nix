@@ -21,7 +21,11 @@
   ## Extra boot info not defined in <lib/sys>
   boot = {
     initrd = {
+<<<<<<< HEAD
+      availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
+=======
       availableKernelModules = [ "xhci_pci" "ahci" "nvme" "thunderbolt" "usbhid" "usb_storage" "sd_mod" ];
+>>>>>>> ce677ea0ca420f091d55f9451a1810ea331899a9
       kernelModules = [ ];
     };
     kernelModules = [ "kvm-amd" ];

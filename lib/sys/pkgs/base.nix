@@ -12,6 +12,7 @@
       act
       bc
       bun
+      devenv
       dig
       dust
       duf
