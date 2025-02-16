@@ -10,6 +10,7 @@
       (modulesPath + "/installer/scan/not-detected.nix")
       ./disko.nix
       ../../lib/sys
+      ../../lib/sys/virtualisation/libvirt.nix
     ];
 
   # <lib/sys> modules
@@ -17,6 +18,7 @@
   cupsService.enable = true;
   vpnService.enable = true;
   udevService.enable = true;
+
 
   ## Extra boot info not defined in <lib/sys>
   boot = {
