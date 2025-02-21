@@ -1,11 +1,52 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [
-    ./base.nix
     ./gamePkgs.nix
   ];
 
-  base.enable = lib.mkDefault true;
+  environment.systemPackages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+
+    act
+    bc
+    bun
+    devenv
+    dig
+    dust
+    duf
+    fastfetch
+    fd
+    ffmpeg-full
+    file
+    gcc
+    git
+    gnumake
+    grex
+    htop
+    jaq
+    jq
+    just
+    killall
+    nmon
+    openssl
+    openvpn
+    ouch
+    p7zip
+    pre-commit
+    prettierd
+    procs
+    psmisc
+    psutils
+    ripgrep
+    rsync
+    scc
+    tree
+    unrar
+    unzip
+    wget
+    zip
+  ];
+
   gamePkgs.enable = lib.mkDefault true;
 }
