@@ -1,7 +1,7 @@
 {
   imports = [
     ./bat.nix
-    ./nixvim
+    #./nixvim
     ./eza.nix
     ./freetube.nix
     ./git.nix

@@ -35,6 +35,16 @@
         modules = [ 
           ./hosts/fuji
           inputs.disko.nixosModules.default
+          inputs.nixvim.nixosModules.nixvim
+          home-manager.nixosModules.home-manager {
+            home-manager = { 
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users = {
+                wg = import ./home/wg;
+              };
+            };
+          }
         ];
       };
       aso = lib.nixosSystem {
@@ -42,14 +52,24 @@
         modules = [
           ./hosts/aso
           inputs.disko.nixosModules.default
+          inputs.nixvim.nixosModules.nixvim
+          home-manager.nixosModules.home-manager {
+            home-manager = { 
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users = {
+                wg = import ./home/wg;
+              };
+            };
+          }
         ];
       };
     };
     homeConfigurations = {
-      "wg@fuji" = home-manager.lib.homeManagerConfiguration {
+      wg = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ 
-          ./home/fuji
+          ./home/wg
           inputs.nixvim.homeManagerModules.nixvim 
         ];
       };
