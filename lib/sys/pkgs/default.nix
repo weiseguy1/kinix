@@ -17,6 +17,7 @@
     fd
     ffmpeg-full
     file
+    font-awesome
     gcc
     git
     gnumake
@@ -27,7 +28,6 @@
     just
     killall
     nerd-fonts.jetbrains-mono
-    nerd-fonts.symbols-only
     nmon
     openssl
     openvpn
