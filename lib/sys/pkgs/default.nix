@@ -6,8 +6,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-
     act
     bc
     bun
@@ -28,6 +26,8 @@
     jq
     just
     killall
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
     nmon
     openssl
     openvpn
