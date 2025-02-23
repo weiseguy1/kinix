@@ -41,6 +41,7 @@
     ripgrep
     rsync
     scc
+    smartmontools
     tree
     unrar
     unzip
