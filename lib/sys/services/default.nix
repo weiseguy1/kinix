@@ -3,6 +3,7 @@
 {
   imports = [
     ./cups.nix
+    ./openssh.nix
     ./openvpn.nix
     ./udev.nix
   ];
