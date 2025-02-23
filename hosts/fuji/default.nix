@@ -76,8 +76,6 @@
     pulse.enable = true;
   };
 
-
-  programs.firefox.enable = true;
   programs.zsh.enable = true;
 
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-kde ];
