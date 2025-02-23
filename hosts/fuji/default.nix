@@ -6,8 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      (modulesPath + "/installer/scan/not-detected.nix")
+    [
       ./disko.nix
       ../../lib/sys
     ];
@@ -65,12 +64,6 @@
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.plasma-browser-integration
   ];
-
-
-  # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
 
 
   # Enable sound.
