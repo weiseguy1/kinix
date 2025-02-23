@@ -1,13 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./options.nix
-    ./lsp.nix
-    ./plugins/autopairs.nix
-    ./plugins/cmp.nix
-    #./plugins/treesitter.nix
-  ];
+  imports = [ ];
 
   programs.nixvim = {
     enable = true;
@@ -17,8 +11,7 @@
     vimAlias = true;
 
     clipboard.register = "unnamedplus";
-    colorschemes.catppuccin.enable = true;
-    plugins = { 
+    plugins = {
       lualine.enable = true;
     };
   };

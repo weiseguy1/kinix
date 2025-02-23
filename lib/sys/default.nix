@@ -4,6 +4,7 @@
     ./networking
     ./nix
     ./pkgs
+    ./programs
     ./security
     ./services
     ./system
