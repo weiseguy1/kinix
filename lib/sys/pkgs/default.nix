@@ -6,6 +6,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    caligula # for burning isos. Will move to separate module soon
+
     act
     bc
     bun
