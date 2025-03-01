@@ -9,6 +9,7 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     act
+    ansible
     bc
     bun
     devenv
