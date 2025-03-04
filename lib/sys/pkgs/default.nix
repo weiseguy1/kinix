@@ -2,11 +2,12 @@
 
 {
   imports = [
+    ./direnv.nix
     ./gamePkgs.nix
   ];
 
   environment.systemPackages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
 
     act
     ansible
