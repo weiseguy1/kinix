@@ -46,6 +46,7 @@
     tree
     unrar
     unzip
+    vagrant
     wget
     zip
   ];
