@@ -11,6 +11,7 @@
       ./disko.nix
       ../../lib/sys
       ../../lib/sys/virtualisation/libvirt.nix
+      ../../lib/sys/virtualisation/virtualbox.nix
     ];
 
   # <lib/sys> modules
