@@ -50,6 +50,7 @@
     wget
     zip
   ];
-
+  
+  services.fwupd.enable = true;
   gamePkgs.enable = lib.mkDefault true;
 }
