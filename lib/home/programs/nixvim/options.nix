@@ -10,5 +10,6 @@
     guifont = "monospace:h17";
     scrolloff = 8;
     sidescrolloff = 8;
+    wrap = false;
   };
 }
