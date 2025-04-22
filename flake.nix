@@ -46,10 +46,10 @@
       };
     };
     homeConfigurations = {
-      "wg@fuji" = home-manager.lib.homeManagerConfiguration {
+      wg = home-manager.lib.homeManagerConfiguration {
 	      inherit pkgs;
         modules = [ 
-          ./home/fuji
+          ./home/wg
           inputs.nixvim.homeManagerModules.nixvim 
         ];
       };
