@@ -7,23 +7,17 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
-
     act
-    ansible
     bc
-    bun
     devenv
     dig
     dust
     duf
     fastfetch
     fd
-    ffmpeg-full
     file
     gcc
     git
-    gnumake
     grex
     htop
     jaq
@@ -46,7 +40,6 @@
     tree
     unrar
     unzip
-    vagrant
     wget
     zip
   ];

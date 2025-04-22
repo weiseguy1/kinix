@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./pkgs
-    ./programs
-    ./shell
-  ];
-}
