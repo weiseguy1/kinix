@@ -5,6 +5,7 @@
     act
     ansible
     bun
+    dbeaver-bin
     direnv
     gh
     gnumake
