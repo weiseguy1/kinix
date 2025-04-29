@@ -33,14 +33,14 @@
       fuji = lib.nixosSystem {
         inherit system;
         modules = [ 
-          ./hosts/fuji
+          ./hosts/nixos/fuji
           inputs.disko.nixosModules.default
         ];
       };
       aso = lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/aso
+          ./hosts/nixos/aso
           inputs.disko.nixosModules.default
         ];
       };

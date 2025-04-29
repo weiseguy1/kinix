@@ -9,26 +9,26 @@
     [ # Include the results of the hardware scan.
       (modulesPath + "/installer/scan/not-detected.nix")
       ./disko.nix
-      ../../lib/sys
+      ../../../lib/sys
+      ../../../lib/sys/virtualisation/libvirt.nix
+      ../../../lib/sys/virtualisation/virtualbox.nix
     ];
 
   # <lib/sys> modules
-  gamePkgs.enable = true;
-  nvidiaDriver.enable = true;
-  nvidiaDriver.useOpen = true;
+  gamePkgs.enable = false;
   cupsService.enable = true;
   vpnService.enable = true;
   udevService.enable = true;
 
+
   ## Extra boot info not defined in <lib/sys>
   boot = {
     initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "thunderbolt" "usbhid" "usb_storage" "sd_mod" ];
       kernelModules = [ ];
     };
     kernelModules = [ "kvm-amd" ];
-    kernelParams = [ "resume_offset=533760" ];
-    resumeDevice = "/dev/disk/by-label/nixos";
+    kernelParams = [ ];
     extraModulePackages = [ ];
     plymouth = {
       enable = true;
@@ -47,13 +47,12 @@
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
 
-  networking.hostName = "fuji"; # Define your hostname.
+  networking.hostName = "aso"; # Define your hostname.
 
 
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    videoDrivers = ["nvidia"];
     xkb = {
       layout = "us";
       variant = "";
